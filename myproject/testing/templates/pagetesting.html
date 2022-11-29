@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+ {% load static %}
+    {% block content %}
+    <div align=center>
+        <a href="/profile"/>
+            <img src="{% static 'images/back.png' %}"/>
+        </a> 
+    </div>
+    <div align=center style="color: #FFFFFF">
+        <h2>Добавить вопрос.</h2>
+    </div>
+    <div align=center>
+        <p><form action="newquestion" method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="ФИО" name="newfio"/>
+            <input type="text" placeholder="Вовпрос" name="newq"/>
+            <input type="text" placeholder="Ответ 1" name="newa1"/>
+            <input type="text" placeholder="Ответ 2" name="newa2"/>
+            <input type="text" placeholder="Правильный ответ" name="newtrue"/>
+            <input type="submit" value="Добавить"/>
+        </p></form>
+   </div>
+    <div align=center>
+        {% for i in questions %}
+            <div style="color: #FFFFFF">
+               <a style="color: #FFFFFF" href = "pagequestion/{{i.id}}"><h3><p>Вопрос: {{i.id}}</p></h3></a> 
+                {{i.questions}}
+            </div>
+            <div style="color: #FFFFFF">
+                <p>Варианты ответа:</p>
+            </div>
+            <div class="sd">
+                <p>{{i.answer1}}</P>
+            </div>
+            <div class="sd">
+                <p>{{i.answer2}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+    

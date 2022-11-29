@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+ {% load static %}
+    {% block content %}
+    <div align=center>
+        <a href="/pagetesting"/>
+            <img src="{% static 'images/back.png' %}"/>
+        </a> 
+    </div>
+    <div align=center>
+            <div style="color: #FFFFFF">
+              <h3><p>Вопрос: {{question.id}}</p></h3> 
+                {{question.questions}}
+            </div>
+            <div style="color: #FFFFFF">
+                <p>Варианты ответа:</p>
+            </div>
+            <div class="sd">
+                <p>{{question.answer1}}</P>
+            </div>
+            <div class="sd">
+                <p>{{question.answer2}}</p>
+            </div>
+            <div>
+                <a style="color: #FFFFFF" href="/pageeditquest/{{question.id}}"> Редактировать</a>
+            </div>
+            <div>
+                <a style="color: #FFFFFF" href="/pagedeletquest/{{question.id}}"> Удалить</a>
+            </div>    
+
+        </div>
+    {% endblock %}
+    

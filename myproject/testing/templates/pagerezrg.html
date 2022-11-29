@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+ {% load static %}
+    {% block content %}
+    <a href="/profile"/>
+        <img src="{% static 'images/back.png' %}"/>
+    </a> 
+    <div align=center>
+            <div style="color: #FFFFFF">
+              <h3><p>Вопрос: {{question.id}}</p></h3> 
+                {{question.questions}}
+            </div>
+            <div style="color: #FFFFFF">
+                <p>Варианты ответа:</p>
+            </div>
+            <div class="sdr">
+                <p>{{question.answer1}}</P>
+            </div>
+            <div class="sdg">
+                <p>{{question.answer2}}</p>
+            </div>
+                </div>
+    <div align=center>
+        <p>
+            <a href="pagetest"/>
+                <img src="{% static 'images/next.png' %}"/>
+            </a>
+        </p>
+    </div> 
+{% endblock %}

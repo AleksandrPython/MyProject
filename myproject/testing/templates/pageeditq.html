@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+ {% load static %}
+    {% block content %}
+    
+    <div align=center>
+            <div style="color: #FFFFFF">
+              <h3 align=center><p>Редактирование вопроса: {{question.id}}</p></h3> 
+            </div>
+            
+        <form action="/saveeditquest/{{question.id}}" method="POST">
+            {% csrf_token %}
+            <div style="color: #FFFFFF">    
+                Вопрос:<p><input size="100" type="text" value="{{question.questions}}" name="newq"/></p>
+                
+            </div>
+            <div style="color: #FFFFFF">
+                Ответ 1:<p><input size="100" type="text" value = "{{question.answer1}}" name="newa1"/></p>
+            </div>
+            <div style="color: #FFFFFF">
+                Ответ 2:<p><input size="100" type="text" value="{{question.answer2}}" name="newa2"/></p>
+            </div>
+            <div style="color: #FFFFFF">
+                Правильный ответ:<p><input size="100" type="text" value="{{question.trueanswer}}" name="newtrue"/></p>
+            </div>
+            <div style="color: #FFFFFF">
+                Ф.И.О.<p><input size="100" type="text" value="{{question.fio}}" name="newfio"/></p>
+            </div>
+            <input type="submit" value="Сохранить"/>
+        </form>
+            
+    </div>
+    {% endblock %}
+    

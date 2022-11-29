@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+ {% load static %}
+    {% block content %}
+    <h1 align="center" style="color: #FFFFFF">
+        Сайт для тестирования начинающих программистов.
+    </h1>
+        <table align="center" background="">
+            <tr>
+                <td align="center">
+                    <form action="pagein" method="POST">
+                        {% csrf_token %}
+                            <p><input type="text" placeholder="Логин" name="login"/></p>
+                            <p><input type="text" placeholder="Пароль" name="password"/></p>
+                            <input class="sb" type="submit" value="Вход"/>
+                        </form>               
+                </td>
+                <td>
+                    <img src="{% static 'images/logo.png' %}"/>
+                </td>
+                <td align="center">
+                    <a href="/pagereg"/>
+                    <img src="{% static 'images/reg.png' %}"/>
+                    <a/>            
+                </td>
+            </tr>
+        </table>
+        <h2 align="center" style="color: #FFFFFF">
+            Итоговый проект А.В. Никифорова слушателя группы PHP-802.
+        </h2>
+        <h2 align="center" style="color: #FFFFFF">
+            Web-приложение разработано на языке программрования Python 
+            с использованием библиотеки Django.
+        </h2>    
+       
+    {% endblock %}
+    

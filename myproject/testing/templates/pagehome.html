@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+ {% load static %}
+    {% block content %}
+    <div align=center>
+        <a href="/"/>
+            <img src="{% static 'images/back.png' %}"/>
+        </a> 
+    </div>
+    <div align=center>
+        <p>
+            <a style="color: #FFFFFF" href="pagetest"/>
+                Проверить знания.
+            </a>
+        </p>
+    </div>
+    <div align=center>
+        <p>
+            <a style="color: #FFFFFF" href="pagetesting"/>
+                Просмотреть список вопрос.
+            </a>
+        </p>
+    </div>
+    {% endblock %}
+    

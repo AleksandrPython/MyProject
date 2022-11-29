@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+ {% load static %}
+    {% block content %}
+    <a href="/profile"/>
+        <img src="{% static 'images/back.png' %}"/>
+    </a> 
+    <div align=center>
+        <div style="color: #FFFFFF">
+            <h3><p>Вопрос: {{question.id}}</p></h3> 
+            {{question.questions}}
+        </div>
+        <div style="color: #FFFFFF">
+            <p>Варианты ответа:</p>
+        </div>
+    </div>        
+    <form action="checkboxes" method="POST">
+     {% csrf_token %}
+    <div align=center>
+        <div class="sd">
+            <p><input type="checkbox" id="answer1" name="answer" value="1"/>
+            <label for="1">{{question.answer1}}</label></p>
+        </div>
+        <div class="sd">
+                <p><input type="checkbox" id="answer2" name="answer" value="2" />
+                <label for="2">{{question.answer2}}</label></p>
+        </div>
+            <p><input type="submit" value="Проверить"/></p>
+    </div> 
+    </form>
+{% endblock %}
+    
